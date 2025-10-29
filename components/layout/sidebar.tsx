@@ -47,7 +47,7 @@ export default function Sidebar() {
         )}
       >
         <div className="p-6 border-b border-border">
-          <h1 className="text-2xl font-bold tracking-tight">Fleet Manager</h1>
+          <h1 className="text-2xl font-bold tracking-tight">Transvoy</h1>
           <p className="text-xs text-muted-foreground mt-1">Document & Fleet Management</p>
         </div>
 
