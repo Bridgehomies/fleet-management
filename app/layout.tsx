@@ -8,9 +8,9 @@ const geistSans = Geist({ subsets: ["latin"] })
 const geistMono = Geist_Mono({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Fleet Manager - Document & Fleet Management",
+  title: "Transvoy - Document & Fleet Management",
   description: "Cloud-based document and fleet management system",
-  generator: "v0.app",
+    generator: 'v0.app'
 }
 
 export default function RootLayout({
