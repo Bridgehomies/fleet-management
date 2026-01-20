@@ -2,7 +2,8 @@ import { updateSession } from "@/lib/supabase/middleware"
 import type { NextRequest } from "next/server"
 import { NextResponse } from "next/server"
 
-export async function middleware(request: NextRequest) {
+// ✅ Changed from 'middleware' to 'proxy'
+export async function proxy(request: NextRequest) {
   const pathname = request.nextUrl.pathname
 
   // Allow auth pages
@@ -22,9 +23,11 @@ export async function middleware(request: NextRequest) {
     return NextResponse.redirect(url)
   }
 
+  // Note: Ensure updateSession is compatible with the new Proxy context
   return await updateSession(request)
 }
 
+// The config matcher remains the same
 export const config = {
   matcher: ["/((?!_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)"],
 }
