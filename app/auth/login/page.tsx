@@ -18,28 +18,32 @@ export default function LoginPage() {
   const [isLoading, setIsLoading] = useState(false)
   const router = useRouter()
 
+  // const handleLogin = async (e: React.FormEvent) => {
+  //   e.preventDefault()
+  //   const supabase = createClient()
+  //   setIsLoading(true)
+  //   setError(null)
+
+  //   try {
+  //     const { error } = await supabase.auth.signInWithPassword({
+  //       email,
+  //       password,
+  //     })
+  //     if (error) throw error
+
+  //     await new Promise((resolve) => setTimeout(resolve, 500))
+  //     router.push("/dashboard")
+  //   } catch (error: unknown) {
+  //     setError(error instanceof Error ? error.message : "An error occurred")
+  //   } finally {
+  //     setIsLoading(false)
+  //   }
+  // }
+
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault()
-    const supabase = createClient()
-    setIsLoading(true)
-    setError(null)
-
-    try {
-      const { error } = await supabase.auth.signInWithPassword({
-        email,
-        password,
-      })
-      if (error) throw error
-
-      await new Promise((resolve) => setTimeout(resolve, 500))
-      router.push("/dashboard")
-    } catch (error: unknown) {
-      setError(error instanceof Error ? error.message : "An error occurred")
-    } finally {
-      setIsLoading(false)
-    }
+    router.push("/dashboard")
   }
-
   return (
     <div className="flex min-h-svh w-full items-center justify-center p-6 md:p-10 bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-950 dark:to-slate-900">
       <div className="w-full max-w-sm">
